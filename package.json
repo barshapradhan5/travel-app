@@ -2,6 +2,6 @@
   "name": "travel-booking-deploy",
   "private": true,
   "scripts": {
-    "vercel-build": "npm --prefix frontend install && npm --prefix frontend run build"
+    "vercel-build": "npm --prefix frontend install --legacy-peer-deps && npm --prefix frontend run build"
   }
 }
