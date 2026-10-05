@@ -35,6 +35,7 @@ def create_app(config_name=None):
     from app.blueprints.bookings import bookings_bp
     from app.blueprints.map import map_bp
     from app.blueprints.contact import contact_bp
+    from app.blueprints.chatbot import chatbot_bp
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(destinations_bp)
@@ -44,6 +45,7 @@ def create_app(config_name=None):
     app.register_blueprint(bookings_bp)
     app.register_blueprint(map_bp)
     app.register_blueprint(contact_bp)
+    app.register_blueprint(chatbot_bp)
 
     # Health-check endpoint
     @app.route('/api/health')

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelMate AI - Your Booking Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fa-solid fa-plane-departure"></i>
+                <h1>TravelMate <span>AI</span></h1>
+            </div>
+            <button id="clear-chat" class="clear-btn" title="Clear Chat">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-area" id="chat-box">
+            <!-- Initial Greeting -->
+            <div class="message bot">
+                <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                <div class="bubble">
+                    Hello! I'm TravelMate AI. I can help you plan trips, search for destinations, and create booking requests. Where would you like to go today?
+                </div>
+            </div>
+        </main>
+
+        <!-- Suggested Prompts -->
+        <div class="suggestions" id="suggestions">
+            <button class="suggestion-btn">Plan a trip to Goa</button>
+            <button class="suggestion-btn">Find a budget trip</button>
+            <button class="suggestion-btn">Suggest destinations in India</button>
+            <button class="suggestion-btn">Plan a 7-day trip</button>
+        </div>
+
+        <!-- Input Area -->
+        <footer class="input-area">
+            <form id="chat-form">
+                <input type="text" id="user-input" placeholder="Ask me about your travel plans..." autocomplete="off" required>
+                <button type="submit" id="send-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </footer>
+    </div>
+
+    <!-- Error Toast -->
+    <div id="toast" class="toast hidden">An error occurred. Please try again.</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

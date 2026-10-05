@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Plane, User, LogOut, BookOpen } from 'lucide-react'
+import { Menu, X, Plane, User, LogOut, BookOpen, Sparkles } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 
 export default function Navbar() {
@@ -22,6 +22,12 @@ export default function Navbar() {
   const handleLogout = () => {
     logout()
     navigate('/')
+  }
+
+  const handleOpenChat = () => {
+    const btn = document.getElementById('chatbot-toggle-button')
+    if (btn) btn.click()
+    setOpen(false)
   }
 
   return (
@@ -47,6 +53,13 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <button
+              onClick={handleOpenChat}
+              className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-indigo-500/15 text-indigo-300 hover:bg-indigo-500/25 hover:text-indigo-200 border border-indigo-500/30 transition-all cursor-pointer"
+            >
+              <Sparkles size={13} className="text-amber-400" />
+              <span>AI Assistant</span>
+            </button>
           </div>
 
           {/* Auth Buttons */}
@@ -100,6 +113,13 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <button
+                onClick={handleOpenChat}
+                className="flex items-center gap-2 w-full px-3 py-2 mt-1 rounded-lg text-sm font-semibold bg-indigo-500/15 text-indigo-300 hover:bg-indigo-500/25 border border-indigo-500/30 transition-all cursor-pointer"
+              >
+                <Sparkles size={15} className="text-amber-400" />
+                <span>AI Travel Assistant</span>
+              </button>
               <div className="pt-3 mt-3" style={{ borderTop: '1px solid var(--color-border)' }}>
                 {isAuthenticated ? (
                   <>

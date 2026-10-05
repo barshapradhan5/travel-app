@@ -15,6 +15,7 @@ import Contact from './pages/Contact'
 import MyBookings from './pages/MyBookings'
 import BookingConfirmation from './pages/BookingConfirmation'
 import ProtectedRoute from './components/ProtectedRoute'
+import ChatbotWidget from './components/ChatbotWidget'
 
 export default function App() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
           </Routes>
         </AnimatePresence>
       </main>
+      <ChatbotWidget />
       <Footer />
     </div>
   )

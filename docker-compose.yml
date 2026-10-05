@@ -25,6 +25,8 @@ services:
       - JWT_SECRET_KEY=${JWT_SECRET_KEY}
       - FLASK_ENV=${FLASK_ENV}
       - FLASK_DEBUG=${FLASK_DEBUG}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - GROQ_MODEL=${GROQ_MODEL}
     ports:
       - "5000:5000"
     volumes:
